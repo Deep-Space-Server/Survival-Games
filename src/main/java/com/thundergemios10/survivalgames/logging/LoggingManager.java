@@ -10,6 +10,7 @@ import org.bukkit.block.Jukebox;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.Event.Result;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockBurnEvent;
 import org.bukkit.event.block.BlockFadeEvent;
@@ -75,7 +76,7 @@ public class LoggingManager implements  Listener{
 	}
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void blockChanged(PlayerInteractEvent e) {
-		if(e.isCancelled())return;
+		if(e.useInteractedBlock() == Result.DENY)return;
 		if(e.getClickedBlock() == null) return;
 		Block b = e.getClickedBlock();
 		String[] type = b.getType().toString().split("_");

@@ -104,14 +104,14 @@ public class LobbyWall {
         Sign s1 = signs.get(1);
 
         //sign 0
-        s0.setLine(0, "[SurvivalGames]");
-        s0.setLine(1, "Click to join");
-        s0.setLine(2, "Arena " + gameid);
-
+        s0.setLine(0, "§b§lSurvivalGames");
+        s0.setLine(1, "§7Click to join");
+        s0.setLine(2, "§6Arena " + gameid);
+        
         //sign 1
-        s1.setLine(0, game.getName());
-        s1.setLine(1, game.getMode() + "");
-        s1.setLine(2, game.getActivePlayers() + "/" + ChatColor.GRAY + game.getInactivePlayers() + ChatColor.BLACK + "/" + SettingsManager.getInstance().getSpawnCount(game.getID()));
+        s1.setLine(0, "§6" + game.getName());
+        s1.setLine(1, "§7" + game.getMode() + "");
+        s1.setLine(2, "§a" + game.getActivePlayers() + "§7/§f" + game.getInactivePlayers() + "§7/§a" + SettingsManager.getInstance().getSpawnCount(game.getID()));
 
         //live update line s1
         if (game.getMode() == Game.GameMode.STARTING) {

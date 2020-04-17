@@ -25,10 +25,10 @@ public class SignClickEvent implements Listener{
         //System.out.println("Clicked sign");
         String[] lines = thisSign.getLines();
         if(lines.length<3) return;
-        if(lines[0].equalsIgnoreCase("[SurvivalGames]")) {
+        if(lines[0].equalsIgnoreCase("§b§lSurvivalGames")) {
             e.setCancelled(true);
             try{
-                if(lines[2].equalsIgnoreCase("Auto Assign")){
+                if(lines[2].equalsIgnoreCase("§7Auto Assign")){
                 	if(SettingsManager.getInstance().getConfig().getInt("randomjoin-mode", 1) == 0) {
                 		GameManager.getInstance().addPlayerRandomly(e.getPlayer());			
                 	}else {
@@ -36,7 +36,7 @@ public class SignClickEvent implements Listener{
 					}
                 }
                 else{
-                    String game = lines[2].replace("Arena ", "");
+                    String game = lines[2].replace("§6Arena ", "");
                     int gameno  = Integer.parseInt(game);
                     GameManager.getInstance().addPlayer(e.getPlayer(), gameno);
                 }

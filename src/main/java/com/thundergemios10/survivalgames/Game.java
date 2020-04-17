@@ -212,7 +212,7 @@ public class Game {
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard board = manager.getNewScoreboard();
         
-        Objective objective = board.registerNewObjective("test", "dummy");
+        Objective objective = board.registerNewObjective("test", "dummy", "test");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         objective.setDisplayName("Scoreboard");
         objective.getName();
@@ -973,7 +973,7 @@ public class Game {
 		p.updateInventory();
 		for(PotionEffect e : p.getActivePotionEffects())
 		{
-			p.addPotionEffect(new PotionEffect(e.getType(), 0 ,0), true);
+			p.addPotionEffect(new PotionEffect(e.getType(), 0 ,0));
 		}
 
 	}
